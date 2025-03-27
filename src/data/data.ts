@@ -13,8 +13,8 @@ export const navLinks = [
     },
     {
         id: 3,
-        name: "Vetra for Business",
-        path: "/vetra_business",
+        name: "About Us",
+        path: "/about_us",
         active: false,
     },
 ]

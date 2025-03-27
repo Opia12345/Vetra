@@ -13,7 +13,7 @@ const NavSectionOne = () => {
       </Link>
       <div className="bg-white md:flex hidden items-center">
         <h5 className="ml-2 mr-2 font-light text-sm text-slate-500">
-          Places to visit, things to do
+          Based on Location
         </h5>
         <input
           type="search"
