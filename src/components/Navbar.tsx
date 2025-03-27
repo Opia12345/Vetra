@@ -4,8 +4,11 @@ import NavSectionOne from "./NavSectionOne.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import Header from "./Header.tsx";
+import { useState } from "react";
+import MobileNav from "./MobileNav.tsx";
 
 const Navbar = () => {
+  const [mobileNav, setMobileNav] = useState(false);
   return (
     <header>
       <nav className="p-8 flex items-center justify-around">
@@ -25,13 +28,15 @@ const Navbar = () => {
         </div>
         <div className="md:hidden">
           <FontAwesomeIcon
+            onClick={() => setMobileNav(true)}
             icon={faBarsStaggered}
-            className="text-white text-xl"
+            className="text-white text-xl cursor-pointer"
           />
         </div>
       </nav>
       <Header />
-    </header>
+      <MobileNav navLinks={navLinks} setMobileNav={setMobileNav} isVisible={mobileNav} />
+      </header>
   );
 };
 

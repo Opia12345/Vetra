@@ -14,7 +14,7 @@ const Header = () => {
         </small>
       </div>
       <div className="mt-4">
-        <span className="bg-amber-400 text-white p-3 mt-2">
+        <span className="bg-amber-400 rounded-md text-white p-3 mt-2">
           <FontAwesomeIcon icon={faTag} />&nbsp;
           Restaurants
         </span>
