@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* header_image */
+header {
+  background: rgba(0, 0, 0, 0.5) url("/header_image.jpg");
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  background-repeat: no-repeat;
+}

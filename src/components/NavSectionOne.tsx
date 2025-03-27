@@ -1,0 +1,33 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
+const NavSectionOne = () => {
+  return (
+    <div className="flex items-center gap-2">
+      <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
+      <Link to="/">
+        <h1 className="font-serif text-xl font-black text-white mr-[40px]">
+          Vetra
+        </h1>
+      </Link>
+      <div className="bg-white md:flex hidden items-center">
+        <h5 className="ml-2 mr-2 font-light text-sm text-slate-500">
+          Places to visit, things to do
+        </h5>
+        <input
+          type="search"
+          className="bg-white border-l-2 outline-none pl-2"
+          placeholder="Lagos, Nigeria"
+          disabled
+        />
+        <FontAwesomeIcon
+          icon={faLocation}
+          className="bg-amber-400 text-white p-2"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default NavSectionOne;
