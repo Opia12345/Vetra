@@ -7,20 +7,14 @@ const NavSectionOne = () => {
     <div className="flex items-center gap-2">
       <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
       <Link to="/">
-        <h1 className="font-serif text-xl font-black text-white mr-[40px]">
+        <h1 className="font-serif text-xl font-black text-white mr-[20px]">
           Vetra
         </h1>
       </Link>
-      <div className="bg-white md:flex hidden items-center">
+      <div className="bg-white lg:flex hidden items-center">
         <h5 className="ml-2 mr-2 font-light text-sm text-slate-500">
-          Based on Location
+          Based on your Location
         </h5>
-        <input
-          type="search"
-          className="bg-white border-l-2 outline-none pl-2"
-          placeholder="Lagos, Nigeria"
-          disabled
-        />
         <FontAwesomeIcon
           icon={faLocation}
           className="bg-amber-400 text-white p-2"
