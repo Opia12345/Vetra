@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+::-webkit-scrollbar{
+  display: none;
+}
 /* header_image */
 header {
   background: rgba(0, 0, 0, 0.5) url("/header_image.jpg");

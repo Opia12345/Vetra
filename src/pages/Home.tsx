@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Activity from "../sections/Activity";
+import Best from "../sections/Best";
 import Categories from "../sections/Categories";
 import CTAOne from "../sections/CTAOne";
 
@@ -9,6 +10,7 @@ const Home = () => {
       <Navbar />
       <Categories />
       <CTAOne />
+      <Best />
       <Activity />
     </main>
   );
