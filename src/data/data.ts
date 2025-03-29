@@ -76,7 +76,7 @@ export const categoryItems = [
     stars: 4.5,
     location: "San Francisco, CA",
     website: "https://techworld.com",
-    image: "/electronics/techworld.png",
+    image: "/filtered data/res1.jpg",
     launched: "2015-08-12",
     category: "electronics",
     link: "/categories/electronics",
@@ -106,30 +106,33 @@ export const categoryItems = [
     stars: 4.8,
     location: "Chicago, IL",
     website: "https://gourmetbites.com",
-    image: "/restaurants/gourmetbites.png",
+    image: "/filtered data/res1.jpg",
     launched: "2016-04-14",
     category: "restaurant",
     link: "/categories/restaurants",
+    tag1: 3044,
   },
   {
     company: "Tasty Treats",
     stars: 4.6,
     location: "Houston, TX",
     website: "https://tastytreats.com",
-    image: "/restaurants/tastytreats.png",
+    image: "/filtered data/res2.jpg",
     launched: "2018-09-30",
     category: "restaurant",
     link: "/categories/restaurants",
+    tag1: 344,
   },
   {
     company: "Spice Haven",
     stars: 4.4,
     location: "Miami, FL",
     website: "https://spicehaven.com",
-    image: "/restaurants/spicehaven.png",
+    image: "/filtered data/res3.jpg",
     launched: "2020-01-22",
     category: "restaurant",
     link: "/categories/restaurants",
+    tag1: 34,
   },
   {
     company: "Moonlight Lounge",
@@ -140,6 +143,7 @@ export const categoryItems = [
     launched: "2015-12-10",
     category: "night_life",
     link: "/categories/night_life",
+    tag1: 254,
   },
   {
     company: "Neon Nights",
@@ -150,6 +154,7 @@ export const categoryItems = [
     launched: "2019-05-08",
     category: "night_life",
     link: "/categories/night_life",
+    tag1: 44,
   },
   {
     company: "Club Vibe",
@@ -160,6 +165,7 @@ export const categoryItems = [
     launched: "2021-03-18",
     category: "night_life",
     link: "/categories/night_life",
+    tag1: 14,
   },
   {
     company: "AllStar Fitness",
@@ -170,6 +176,7 @@ export const categoryItems = [
     launched: "2014-07-20",
     category: "sports",
     link: "/categories/sports",
+    tag1: 364,
   },
   {
     company: "Pro Sports Arena",
@@ -180,6 +187,7 @@ export const categoryItems = [
     launched: "2018-02-11",
     category: "sports",
     link: "/categories/sports",
+    tag1: 503,
   },
   {
     company: "Champion’s Gym",
@@ -190,6 +198,7 @@ export const categoryItems = [
     launched: "2022-06-25",
     category: "sports",
     link: "/categories/sports",
+    tag1: 702,
   },
   {
     company: "Luxury Spa",
@@ -200,6 +209,7 @@ export const categoryItems = [
     launched: "2015-11-15",
     category: "beauty_&_spa",
     link: "/categories/beauty_&_spa",
+    tag1: 1044,
   },
   {
     company: "Glow Salon",
@@ -210,6 +220,7 @@ export const categoryItems = [
     launched: "2019-08-09",
     category: "beauty_&_spa",
     link: "/categories/beauty_&_spa",
+    tag1: 144,
   },
   {
     company: "Pure Elegance",
@@ -220,6 +231,7 @@ export const categoryItems = [
     launched: "2021-12-05",
     category: "beauty_&_spa",
     link: "/categories/beauty_&_spa",
+    tag1: 1404,
   },
   {
     company: "AutoPro Garage",
@@ -230,6 +242,7 @@ export const categoryItems = [
     launched: "2016-03-28",
     category: "automobile",
     link: "/categories/automobile",
+    tag1: 1440,
   },
   {
     company: "Elite Motors",
@@ -240,6 +253,7 @@ export const categoryItems = [
     launched: "2018-10-14",
     category: "automobile",
     link: "/categories/automobile",
+    tag1: 53,
   },
   {
     company: "Speedy Repairs",
@@ -250,6 +264,7 @@ export const categoryItems = [
     launched: "2020-07-19",
     category: "automobile",
     link: "/categories/automobile",
+    tag1: 4032,
   },
   {
     company: "Fix-It Fast",
@@ -260,6 +275,7 @@ export const categoryItems = [
     launched: "2015-06-07",
     category: "home_services",
     link: "/categories/home_services",
+    tag1: 532,
   },
   {
     company: "Handyman Pro",
@@ -270,6 +286,7 @@ export const categoryItems = [
     launched: "2019-04-11",
     category: "home_services",
     link: "/categories/home_services",
+    tag1: 837,
   },
   {
     company: "Reliable Repairs",
@@ -280,6 +297,7 @@ export const categoryItems = [
     launched: "2021-09-30",
     category: "home_services",
     link: "/categories/home_services",
+    tag1: 8934,
   },
   {
     company: "Workspace Hub",
@@ -290,6 +308,7 @@ export const categoryItems = [
     launched: "2016-01-22",
     category: "offices",
     link: "/categories/offices",
+    tag1: 283,
   },
   {
     company: "CoWork Central",
@@ -300,6 +319,7 @@ export const categoryItems = [
     launched: "2018-11-10",
     category: "offices",
     link: "/categories/offices",
+    tag1: 144,
   },
   {
     company: "Office Solutions",
@@ -310,6 +330,7 @@ export const categoryItems = [
     launched: "2020-05-05",
     category: "offices",
     link: "/categories/offices",
+    tag1: 232,
   },
 ];
 
