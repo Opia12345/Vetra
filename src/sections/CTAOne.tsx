@@ -1,4 +1,4 @@
-const CTAOne = () => {
+const CTAOne = ({ onLoginClick }) => {
   return (
     <section className="p-8 mt-8 flex justify-center">
       <div className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 py-4 px-6 rounded-lg shadow-lg text-white">
@@ -13,7 +13,10 @@ const CTAOne = () => {
             </h5>
           </div>
           <div className="place-content-center">
-            <button className="border hover:bg-slate-200/20 transition-all ease-in-out cursor-pointer duration-300 px-4 py-2 rounded-md">
+            <button
+              onClick={onLoginClick}
+              className="border hover:bg-slate-200/20 transition-all ease-in-out cursor-pointer duration-300 px-4 py-2 rounded-md"
+            >
               Get Started
             </button>
           </div>

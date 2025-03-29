@@ -1,3 +1,5 @@
+import { useState } from "react";
+import InteractionPopup from "../components/InteractionPopup";
 import Navbar from "../components/Navbar";
 import Activity from "../sections/Activity";
 import Best from "../sections/Best";
@@ -7,14 +9,21 @@ import CTATwo from "../sections/CTATwo";
 import Footer from "../sections/Footer";
 
 const Home = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen((prev) => !prev);
+  };
+
   return (
     <main>
-      <Navbar />
+      <Navbar onLoginClick={togglePopup} />
+      <InteractionPopup isOpen={isPopupOpen} onClose={togglePopup} />
       <Categories />
-      <CTAOne />
+      <CTAOne onLoginClick={togglePopup} />
       <Best />
-      <Activity />
-      <CTATwo />
+      <Activity onLoginClick={togglePopup} />
+      <CTATwo onLoginClick={togglePopup} />
       <Footer />
     </main>
   );

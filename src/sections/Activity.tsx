@@ -7,8 +7,10 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-const Activity = () => {
+const Activity = ({ onLoginClick }) => {
   return (
     <section className="p-8 mt-8">
       <div className="text-center">
@@ -24,9 +26,10 @@ const Activity = () => {
               className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 flex flex-col space-y-4"
             >
               <div className="flex items-center space-x-4">
-                <img
+                <LazyLoadImage
                   src={review.image}
                   alt={review.reviewer}
+                  effect="blur"
                   className="w-12 h-12 rounded-full object-cover border border-gray-300"
                 />
                 <div>
@@ -37,10 +40,11 @@ const Activity = () => {
                 </div>
               </div>
 
-              <img
+              <LazyLoadImage
                 src={review.thumbnail}
                 alt={review.reviewer}
-                className="h-[200px]"
+                effect="blur"
+                className="h-[200px] w-full object-cover rounded-md"
               />
 
               <h4 className="text-lg font-semibold">{review.title}</h4>
@@ -58,19 +62,28 @@ const Activity = () => {
                     <FontAwesomeIcon
                       className="cursor-pointer"
                       icon={faHeart}
+                      onClick={onLoginClick}
                     />
                   </Tippy>
-                  <Tippy placement="bottom" content="View More">
-                    <FontAwesomeIcon className="cursor-pointer" icon={faEye} />
+                  <Tippy placement="bottom" content="View">
+                    <FontAwesomeIcon
+                      onClick={onLoginClick}
+                      className="cursor-pointer"
+                      icon={faEye}
+                    />
                   </Tippy>
                   <Tippy placement="bottom" content="Save">
                     <FontAwesomeIcon
+                      onClick={onLoginClick}
                       className="cursor-pointer"
                       icon={faBookmark}
                     />
                   </Tippy>
                 </div>
               </div>
+              <h5 className="text-sm text-slate-400">
+                Category: {review.category}
+              </h5>
             </div>
           ))}
         </div>

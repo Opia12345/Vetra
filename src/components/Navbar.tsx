@@ -7,7 +7,7 @@ import Header from "./Header.tsx";
 import { useState } from "react";
 import MobileNav from "./MobileNav.tsx";
 
-const Navbar = () => {
+const Navbar = ({ onLoginClick }) => {
   const [mobileNav, setMobileNav] = useState(false);
   return (
     <header>
@@ -19,10 +19,16 @@ const Navbar = () => {
               <h4 className="hover:text-slate-300">{navLink.name}</h4>
             </NavLink>
           ))}
-          <button className="bg-amber-400 px-4 py-2 cursor-pointer hover:bg-amber-500 transition-all ease-in-out duration-300 rounded-md text-white font-semibold">
+          <button
+            onClick={onLoginClick}
+            className="bg-amber-400 px-4 py-2 cursor-pointer hover:bg-amber-500 transition-all ease-in-out duration-300 rounded-md text-white font-semibold"
+          >
             Login
           </button>
-          <button className="bg-slate-200/20 px-4 py-2 cursor-pointer hover:bg-slate-400/20 transition-all ease-in-out duration-300 rounded-md text-white font-semibold">
+          <button
+            onClick={onLoginClick}
+            className="bg-slate-200/20 px-4 py-2 cursor-pointer hover:bg-slate-400/20 transition-all ease-in-out duration-300 rounded-md text-white font-semibold"
+          >
             Register
           </button>
         </div>
@@ -35,8 +41,12 @@ const Navbar = () => {
         </div>
       </nav>
       <Header />
-      <MobileNav navLinks={navLinks} setMobileNav={setMobileNav} isVisible={mobileNav} />
-      </header>
+      <MobileNav
+        navLinks={navLinks}
+        setMobileNav={setMobileNav}
+        isVisible={mobileNav}
+      />
+    </header>
   );
 };
 
