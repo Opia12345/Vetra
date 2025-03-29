@@ -7,7 +7,7 @@ import Header from "./Header.tsx";
 import { useState } from "react";
 import MobileNav from "./MobileNav.tsx";
 
-const Navbar = ({ onLoginClick }) => {
+const Navbar = ({ onLoginClick = () => {} }) => {
   const [mobileNav, setMobileNav] = useState(false);
   return (
     <header>

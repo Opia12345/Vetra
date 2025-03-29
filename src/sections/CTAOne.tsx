@@ -1,4 +1,4 @@
-const CTAOne = ({ onLoginClick }) => {
+const CTAOne = ({ onLoginClick = () => {} }) => {
   return (
     <section className="p-8 mt-8 flex justify-center">
       <div className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 py-4 px-6 rounded-lg shadow-lg text-white">

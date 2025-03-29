@@ -1,4 +1,4 @@
-const CTATwo = ({ onLoginClick }) => {
+const CTATwo = ({ onLoginClick = () => {} }) => {
   return (
     <section className="p-8 mt-8">
       <div className="relative bg-gradient-to-r from-blue-600 to-purple-500 text-white py-16 px-6 text-center rounded-2xl shadow-lg overflow-hidden">
