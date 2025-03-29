@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   return (
-    <div className="md:p-20 px-10 pt-28 md:mt-[10%] mt-[20%]">
+    <div className="md:p-20 px-10 pt-28 md:mt-[10%] mt-[20%] header">
       <div>
         <h1 className="md:text-4xl text-3xl font-black text-white">
           The Ultimate Destination for <br /> Trusted Ratings & Smart Decisions.

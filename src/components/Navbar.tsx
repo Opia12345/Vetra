@@ -45,6 +45,7 @@ const Navbar = ({ onLoginClick = () => {} }) => {
         navLinks={navLinks}
         setMobileNav={setMobileNav}
         isVisible={mobileNav}
+        onLoginClick={onLoginClick}
       />
     </header>
   );
