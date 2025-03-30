@@ -13,10 +13,12 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-10 px-6">
       <div className="lg:flex block md:items-center justify-around">
         <div className="text-left">
-          <h2 className="text-2xl flex items-center gap-2 font-bold">
-            <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
-            Vetra
-          </h2>
+          <Link to="/">
+            <h2 className="text-2xl flex items-center gap-2 font-bold">
+              <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
+              Vetra
+            </h2>
+          </Link>
           <p className="text-gray-400 mt-2">
             Your trusted source for honest reviews
           </p>

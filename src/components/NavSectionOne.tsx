@@ -7,7 +7,7 @@ const NavSectionOne = () => {
     <div className="flex items-center gap-2">
       <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
       <Link to="/">
-        <h1 className="font-serif text-xl font-black text-white mr-[20px]">
+        <h1 className="text-xl font-black text-white mr-[20px]">
           Vetra
         </h1>
       </Link>

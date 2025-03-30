@@ -1,21 +1,43 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple } from "@fortawesome/free-brands-svg-icons";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 interface InteractionPopupProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+const schema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+});
+
 const InteractionPopup: React.FC<InteractionPopupProps> = ({
   isOpen,
   onClose,
 }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   if (!isOpen) return null;
+
+  const onSubmit = (data: any) => {
+    console.log("Form Submitted", data);
+  };
 
   return (
     <div
@@ -36,21 +58,23 @@ const InteractionPopup: React.FC<InteractionPopupProps> = ({
           Login to continue
         </p>
 
-        <form className="mt-4">
+        <form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
           <input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email")}
             className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          <p className="text-red-500 text-sm">{errors.email?.message}</p>
+
           <input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            {...register("password")}
             className="w-full mt-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          <p className="text-red-500 text-sm">{errors.password?.message}</p>
+
           <button
             type="submit"
             className="w-full mt-4 p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"

@@ -3,7 +3,7 @@ import { navLinks } from "../data/data.ts";
 import { NavLink } from "react-router-dom";
 import NavSectionOne from "../components/NavSectionOne.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
+import { faBarsStaggered, faSearch } from "@fortawesome/free-solid-svg-icons";
 import MobileNav from "../components/MobileNav.tsx";
 import InteractionPopup from "../components/InteractionPopup.tsx";
 import Footer from "../sections/Footer.tsx";
@@ -73,6 +73,7 @@ const Review: React.FC<InteractionPopupProps> = ({
               className="w-full outline-none text-gray-700 placeholder:text-gray-400 text-sm px-2 bg-transparent"
               placeholder="Enter a Location..."
             />
+            <FontAwesomeIcon className="text-black" icon={faSearch} />
           </div>
         </div>
       </div>

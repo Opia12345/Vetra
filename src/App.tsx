@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import CategoryDetails from "./routes/CategoryDetails";
 import { useState } from "react";
 import Review from "./pages/Review";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +22,26 @@ function App() {
           path="/review"
           element={
             <Review
+              isOpen={isPopupOpen}
+              onLoginClick={togglePopup}
+              onClose={togglePopup}
+            />
+          }
+        />
+        <Route
+          path="/about_us"
+          element={
+            <About
+              isOpen={isPopupOpen}
+              onLoginClick={togglePopup}
+              onClose={togglePopup}
+            />
+          }
+        />
+        <Route
+          path="/contact_us"
+          element={
+            <Contact
               isOpen={isPopupOpen}
               onLoginClick={togglePopup}
               onClose={togglePopup}
