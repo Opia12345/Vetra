@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { categoryItems } from "../data/data";
 import { navLinks } from "../data/data.ts";
@@ -34,6 +34,7 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
   const { id } = useParams<{ id: string }>();
   const [items, setItems] = useState<CategoryItem[]>([]);
   const [mobileNav, setMobileNav] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (id) {
@@ -103,27 +104,67 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
 
           {categoryItems.length > 0 ? (
             [...new Set(categoryItems.map((item) => item.category))].map(
-              (category, index) => (
-                <div key={index} className="mt-4">
-                  <Link
-                    to={`/categories/${category
-                      .toUpperCase()
-                      .replace(/\s+/g, "-")}`}
-                    className="block w-full px-3 py-2 rounded-lg hover:bg-gray-200 transition"
-                  >
-                    <h3 className="text-lg font-medium text-gray-800">
-                      {category.toUpperCase().replace(/_/g, " ")}
-                    </h3>
-                  </Link>
-                </div>
-              )
+              (category, index) => {
+                const categoryPath = `/categories/${category
+                  .toUpperCase()
+                  .replace(/\s+/g, "-")}`;
+                const isActive = location.pathname === categoryPath;
+
+                return (
+                  <div key={index} className="mt-4">
+                    <Link
+                      to={categoryPath}
+                      className={`block px-3 py-2 rounded-lg transition ${
+                        isActive
+                          ? "bg-gray-800 text-white"
+                          : "hover:bg-gray-200 text-gray-800"
+                      }`}
+                    >
+                      <h3 className="text-sm font-medium">
+                        {category.toUpperCase().replace(/_/g, " ")}
+                      </h3>
+                    </Link>
+                  </div>
+                );
+              }
             )
           ) : (
             <p className="text-gray-500 text-sm mt-4">No categories found.</p>
           )}
         </div>
 
-        <div className="flex flex-col md:ml-[450px] mt-12 w-full justify-center gap-8">
+        <div className="flex flex-col md:ml-[400px] mt-12 w-full justify-center gap-8">
+          <div className="flex md:hidden items-center justify-evenly gap-4 overflow-scroll whitespace-nowrap">
+            {categoryItems.length > 0 ? (
+              [...new Set(categoryItems.map((item) => item.category))].map(
+                (category, index) => {
+                  const categoryPath = `/categories/${category
+                    .toUpperCase()
+                    .replace(/\s+/g, "-")}`;
+                  const isActive = location.pathname === categoryPath;
+
+                  return (
+                    <div key={index} className="mt-4">
+                      <Link
+                        to={categoryPath}
+                        className={`block px-3 py-2 border rounded-lg transition ${
+                          isActive
+                            ? "bg-gray-800 text-white"
+                            : "hover:bg-gray-200 text-gray-800"
+                        }`}
+                      >
+                        <h3 className="text-sm font-medium">
+                          {category.toUpperCase().replace(/_/g, " ")}
+                        </h3>
+                      </Link>
+                    </div>
+                  );
+                }
+              )
+            ) : (
+              <p className="text-gray-500 text-sm mt-4">No categories found.</p>
+            )}
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-left capitalize">
             {id ? id.replace(/_/g, " ") : "Category"}
           </h2>
