@@ -39,7 +39,8 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
   useEffect(() => {
     if (id) {
       const filteredItems = categoryItems.filter(
-        (item) => item.category.toLowerCase() === id.toLowerCase()
+        (item) =>
+          item.category.toLowerCase() === id?.replace(/-/g, " ").toLowerCase()
       );
       setItems(filteredItems);
     }
@@ -106,7 +107,7 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
             [...new Set(categoryItems.map((item) => item.category))].map(
               (category, index) => {
                 const categoryPath = `/categories/${category
-                  .toUpperCase()
+                  .toLowerCase()
                   .replace(/\s+/g, "-")}`;
                 const isActive = location.pathname === categoryPath;
 
@@ -139,8 +140,9 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
               [...new Set(categoryItems.map((item) => item.category))].map(
                 (category, index) => {
                   const categoryPath = `/categories/${category
-                    .toUpperCase()
+                    .toLowerCase()
                     .replace(/\s+/g, "-")}`;
+
                   const isActive = location.pathname === categoryPath;
 
                   return (

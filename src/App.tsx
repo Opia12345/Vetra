@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/categories/:id"
+          path={`/categories/:id`}
           element={
             <CategoryDetails
               isOpen={isPopupOpen}
