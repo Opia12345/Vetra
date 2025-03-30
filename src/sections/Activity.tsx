@@ -12,7 +12,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Activity = ({ onLoginClick = () => {} }) => {
   return (
-    <section className="p-8 mt-8">
+    <section data-aos="fade-in" className="p-8 mt-8">
       <div className="text-center">
         <h1 className="text-3xl font-bold text-gray-800">Recent Reviews</h1>
         <p className="text-gray-500 mt-2">Hear from real people</p>

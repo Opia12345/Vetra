@@ -1,8 +1,8 @@
 const CTATwo = ({ onLoginClick = () => {} }) => {
   return (
-    <section className="p-8 mt-8">
+    <section className="p-8 mt-8" data-aos="fade-down">
       <div className="relative bg-gradient-to-r from-blue-600 to-purple-500 text-white py-16 px-6 text-center rounded-2xl shadow-lg overflow-hidden">
-        {/* Floating Images */}
+
         <div className="absolute -top-10 left-4 transform rotate-[-15deg]">
           <img
             src="/images/img1.jpg"
@@ -22,7 +22,6 @@ const CTATwo = ({ onLoginClick = () => {} }) => {
           />
         </div>
 
-        {/* Content */}
         <h2 className="text-3xl font-bold leading-tight">
           Make Smarter Choices, Faster.
         </h2>

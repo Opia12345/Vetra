@@ -93,7 +93,7 @@ const Contact: React.FC<InteractionPopupProps> = ({
       />
 
       {isOpen && <InteractionPopup isOpen={isOpen} onClose={onClose} />}
-      <div className="mt-20 p-12 flex justify-center">
+      <div className="mt-20 md:p-12 p-6 flex justify-center">
         <div className="w-full max-w-3xl bg-white/30 p-8 rounded-2xl shadow-2xl border border-gray-200">
           <h2 className="text-3xl font-bold text-center text-gray-900">
             Get in Touch

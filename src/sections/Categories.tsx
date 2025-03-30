@@ -6,7 +6,7 @@ const Categories = () => {
   const categories = [...new Set(categoryItems.map((item) => item.category))];
 
   return (
-    <section className="p-8 mt-8 max-w-6xl mx-auto">
+    <section data-aos="fade-up" className="p-8 mt-8 max-w-6xl mx-auto">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-extrabold text-gray-900">
           Find What You Need

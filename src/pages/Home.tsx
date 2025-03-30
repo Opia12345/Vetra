@@ -7,6 +7,7 @@ import Categories from "../sections/Categories";
 import CTAOne from "../sections/CTAOne";
 import CTATwo from "../sections/CTATwo";
 import Footer from "../sections/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -23,6 +24,7 @@ const Home = () => {
       <CTAOne onLoginClick={togglePopup} />
       <Best />
       <Activity onLoginClick={togglePopup} />
+      <ScrollToTop />
       <CTATwo onLoginClick={togglePopup} />
       <Footer />
     </main>

@@ -16,7 +16,7 @@ const getStars = (rating: number) => {
 
 const Best = () => {
   return (
-    <section className="p-8 mt-8">
+    <section data-aos="fade-in" className="p-8 mt-8">
       <div className="text-center">
         <h1 className="text-2xl font-bold text-gray-800">
           Most reviewed companies

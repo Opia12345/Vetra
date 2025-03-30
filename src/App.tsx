@@ -2,13 +2,25 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import CategoryDetails from "./routes/CategoryDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Review from "./pages/Review";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  //AOS SETUP
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: true,
+    });
+  }, []);
 
   const togglePopup = () => {
     setIsPopupOpen((prev) => !prev);
