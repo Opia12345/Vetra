@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import CategoryDetails from "./routes/CategoryDetails";
 import { useState } from "react";
+import Review from "./pages/Review";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -15,6 +16,16 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/review"
+          element={
+            <Review
+              isOpen={isPopupOpen}
+              onLoginClick={togglePopup}
+              onClose={togglePopup}
+            />
+          }
+        />
         <Route
           path={`/categories/:id`}
           element={
