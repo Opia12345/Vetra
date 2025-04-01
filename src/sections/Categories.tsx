@@ -15,27 +15,40 @@ const Categories = () => {
       </div>
 
       <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
-        {categories.map((category, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white rounded-xl border border-slate-300 shadow-md p-6 flex flex-col items-center cursor-pointer hover:bg-gray-100 transition"
-          >
-            <Link
-              to={`/categories/${category}`}
-              className="w-full flex items-center"
+        {categories.map((category, index) => {
+          const categoryItem = categoryItems.find((item) => item.category === category);
+          
+          return (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl border border-slate-300 shadow-md p-6 flex flex-col items-center cursor-pointer hover:bg-gray-100 transition"
             >
-              <div className="flex items-center justify-between">
-                <span className="flex items-center">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {category.replace(/_/g, " ").toUpperCase()}
-                  </h3>
-                </span>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+              <Link
+                to={`/categories/${category}`}
+                className="w-full flex flex-col items-center"
+              >
+                {/* Category Image */}
+                {categoryItem?.img && (
+                  <img
+                    src={categoryItem.img}
+                    alt={category}
+                    className="w-12 h-12"
+                  />
+                )}
+
+                {/* Category Name */}
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {category.replace(/_/g, " ").toUpperCase()}
+                </h3>
+                <p className="text-sm text-gray-600 text-center mt-2">
+                {categoryItem?.description}
+              </p>
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ const Best = () => {
         <h1 className="text-2xl font-bold text-gray-800">
           Most reviewed companies
         </h1>
-        <p className="text-gray-500 mt-2">Top 4 companies in your locaction</p>
+        <p className="text-gray-500 mt-2">Top 4 companies in your location</p>
       </div>
 
       <div className="flex justify-center">

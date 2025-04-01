@@ -23,7 +23,7 @@ const Review: React.FC<InteractionPopupProps> = ({
 
   return (
     <section className="">
-      <nav className="p-8 flex fixed z-[8888] top-0 right-0 w-full bg-gray-900 items-center justify-around">
+      <nav className="p-6 flex fixed z-[8888] top-0 right-0 w-full bg-gray-900 items-center justify-around">
         <NavSectionOne />
         <div className="md:flex gap-3 hidden font-font-light text-white items-center">
           {navLinks.map((navLink) => (

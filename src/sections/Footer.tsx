@@ -16,7 +16,7 @@ const Footer = () => {
           <Link to="/">
             <h2 className="text-2xl flex items-center gap-2 font-bold">
               <img src="/vetra_icon.png" className="w-[30px]" alt="app_logo" />
-              Vetra
+              ReviewCloud
             </h2>
           </Link>
           <p className="text-gray-400 mt-2">

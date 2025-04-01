@@ -47,7 +47,8 @@ const Activity = ({ onLoginClick = () => {} }) => {
                 className="h-[200px] w-full object-cover rounded-md"
               />
 
-              <h4 className="text-lg font-semibold">{review.title}</h4>
+              <h4 className="text-xl text-blue-500 font-semibold">{review.name}</h4>
+              <h4 className="text-md font-semibold">{review.title}</h4>
 
               <div className="text-green-400 text-md">
                 {"★".repeat(review.stars) + "☆".repeat(5 - review.stars)}
