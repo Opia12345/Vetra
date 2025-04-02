@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navLinks } from "../data/data.ts";
 import { NavLink } from "react-router-dom";
 import NavSectionOne from "../components/NavSectionOne.tsx";
@@ -14,12 +14,42 @@ interface InteractionPopupProps {
   onClose: () => void;
 }
 
+const popularLocations = [
+  "McDonald's",
+  "Los Angeles, USA",
+  "Apple",
+  "London, UK",
+  "Starbucks",
+  "Tesla",
+];
+
 const Review: React.FC<InteractionPopupProps> = ({
   onLoginClick,
   isOpen,
   onClose,
 }) => {
   const [mobileNav, setMobileNav] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const searchRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
+        setDropdownVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const filteredLocations = popularLocations.filter((location) =>
+    location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <section className="">
@@ -67,26 +97,54 @@ const Review: React.FC<InteractionPopupProps> = ({
           <p className="text-lg mt-3 font-medium">
             Leave a review to help others make the right choice.
           </p>
-          <div className="bg-white rounded-full shadow-lg w-full max-w-lg px-5 py-3 mt-6 flex items-center">
-            <input
-              type="search"
-              className="w-full outline-none text-gray-700 placeholder:text-gray-400 text-sm px-2 bg-transparent"
-              placeholder="Enter a Location..."
-            />
-            <FontAwesomeIcon className="text-black" icon={faSearch} />
+
+          <div ref={searchRef} className="relative w-full max-w-lg mt-6">
+            <div className="bg-white rounded-full shadow-lg px-5 py-3 flex items-center">
+              <FontAwesomeIcon className="text-black" icon={faSearch} />
+              <input
+                type="search"
+                className="w-full outline-none text-gray-700 placeholder:text-gray-400 text-sm px-2 bg-transparent"
+                placeholder="Search for a city or business..."
+                value={searchTerm}
+                onFocus={() => setDropdownVisible(true)}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+
+            {isDropdownVisible && filteredLocations.length > 0 && (
+              <ul className="absolute left-0 right-0 mt-2 bg-white text-left rounded-lg shadow-lg overflow-hidden">
+                <h5 className="px-5 py-2 text-gray-500 text-sm">
+                  Popular Locations
+                </h5>
+                {filteredLocations.map((location, index) => (
+                  <li
+                    key={index}
+                    className="px-5 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => {
+                      setSearchTerm(location);
+                      setDropdownVisible(false);
+                    }}
+                  >
+                    {location}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
 
       <div className="flex justify-center flex-col p-8 items-center">
         <img src="/review.svg" className="md:w-[40%]" alt="" />
-        <p className="text-slate-600 md:text-lg text-xs text-center">Register now and get the full user experience, you're just one click away!</p>
+        <p className="text-slate-600 md:text-lg text-xs text-center">
+          Register now and get the full user experience, you're just one click
+          away!
+        </p>
       </div>
 
       {isOpen && <InteractionPopup isOpen={isOpen} onClose={onClose} />}
 
-        <Footer />
-
+      <Footer />
     </section>
   );
 };

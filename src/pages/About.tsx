@@ -62,7 +62,7 @@ const About: React.FC<InteractionPopupProps> = ({
         <h1 className="text-4xl font-bold text-gray-900">About Us</h1>
         <p className="text-lg text-gray-600 max-w-2xl mt-4">
           Welcome to
-          <span className="text-amber-500 font-semibold"> Vetra</span>, where we
+          <span className="text-amber-500 font-semibold"> ReviewCloud</span>, where we
           strive to provide the best experiences for our users. Our mission is
           to create innovative solutions that make life easier and more
           enjoyable.
@@ -103,7 +103,7 @@ const About: React.FC<InteractionPopupProps> = ({
         <p className="text-gray-700 mt-10 max-w-3xl">
           Whether you're here to explore, learn, or collaborate, we’re excited
           to have you on this journey with us. Thank you for choosing{" "}
-          <span className="text-amber-500 font-semibold">Vetra</span>!
+          <span className="text-amber-500 font-semibold">ReviewCloud</span>!
         </p>
       </div>
 

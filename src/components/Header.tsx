@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// List of popular locations
 const popularLocations = [
   "New York, USA",
   "Los Angeles, USA",
@@ -65,7 +64,6 @@ const Header = () => {
               <h5 className="px-5 py-2 text-gray-500 text-sm">
                 Popular Locations
               </h5>
-              <hr />
               {filteredLocations.map((location, index) => (
                 <li
                   key={index}
