@@ -19,7 +19,7 @@ const Best = () => {
     <section data-aos="fade-in" className="p-8 mt-8">
       <div className="text-center">
         <h1 className="text-2xl font-bold text-gray-800">
-          Most reviewed companies
+          Most Reviewed Companies
         </h1>
         <p className="text-gray-500 mt-2">Top 4 companies in your location</p>
       </div>

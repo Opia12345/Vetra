@@ -62,6 +62,8 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
     );
   }
 
+  const path = useLocation();
+
   return (
     <section>
       <nav className="p-8 flex fixed z-[8888] top-0 right-0 w-full bg-gray-900 items-center justify-around">
@@ -167,6 +169,14 @@ const CategoryDetails: React.FC<InteractionPopupProps> = ({
               <p className="text-gray-500 text-sm mt-4">No categories found.</p>
             )}
           </div>
+          <span className="flex font-semibold">
+            <Link to="/" className="cursor-pointer mr-1 hover:text-blue-400">
+              Home
+            </Link>
+            <div className="text-blue-400">
+              {path.pathname.replace(/_/g, " ").replace(/\//g, " > ")}
+            </div>
+          </span>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-left capitalize">
             {id ? id.replace(/_/g, " ") : "Category"}
           </h2>
